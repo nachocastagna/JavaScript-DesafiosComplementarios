@@ -87,13 +87,15 @@ const animales = [ //arrays
      
     {nombre:"jacinto",tipo:"gato", color:"gris", raza:"otro"},
 
-    {nombre:"polo",tipo:"perro", color:"blanco", raza:"labrador"},
+    {nombre:"polo",tipo:"perro", color:"blanco", raza:"golden"},
 
-    {nombre:"kalu",tipo:"perro", color:"gria", raza:"golden"},
+    {nombre:"kalu",tipo:"perro", color:"gris", raza:"golden"},
+
+    {nombre:"roman",tipo:"gato", color:"azul", raza:"siames"},
 ];
 
-
-alert("Aqui podras poner en busqueda tu animal perdido!");
+//AGREGAR ANIMAL PERDIDO AL ARRAYS
+/* alert("Aqui podras poner en busqueda tu animal perdido!"); // alert para agregar animales con las siguientes caracateristicas
   
     let nombre = prompt("Nombre del animal");
 
@@ -104,13 +106,35 @@ alert("Aqui podras poner en busqueda tu animal perdido!");
     let raza = prompt("Raza");
 
     
-    let agregar = new Animal(nombre, tipo, color, raza);
+    let agregar = new Animal(nombre, tipo, color, raza); 
 
     animales.unshift(agregar);
     
     alert(
         `${nombre} fue agregado a la lista de animales perdidos`
-      );
+      ); */
+
+
+let busquedaNombre = prompt("Escriba nombre del animal perdido");
+
+let buscar = animales.find(animal => animal.nombre === busquedaNombre);
+
+
+if(buscar === undefined){
+    alert("Animal no encontrado. Lo siento! ")
+}
+else{
+    let mensaje = (`Nombre: ${buscar.nombre}
+
+Tipo: ${buscar.tipo}
+
+Color: ${buscar.color}
+
+Raza: ${buscar.raza}`);
+
+alert(mensaje);}
+
+
 
 
 
